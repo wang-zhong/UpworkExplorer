@@ -27,16 +27,22 @@ struct JobDetail: View {
                         Text(post.duration!)
                         Text(post.hoursNeeded!)
                     }
-                    Text(post.experienceLevel)
-                    Text(post.country)
                 }
                 .padding(.top, 4)
+                HStack {
+                    Text(post.experienceLevel)
+                    Text(post.location)
+                }
                 .padding(.bottom, 4)
                 Text("Description: ").font(.title2)
                 HighlightText(text: post.description, term: modelData.searchTerm)
                 HighlightText(text: post.badges, term: modelData.searchTerm)
                     .foregroundColor(.indigo)
                     .padding(.top)
+                    .padding(.bottom)
+
+                ActivityView(post: post)
+                ClientView(post: post)
             }
             .padding()
             .textSelection(.enabled)

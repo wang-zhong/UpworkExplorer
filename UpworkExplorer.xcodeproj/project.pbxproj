@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21C48E632A869E3A0012DAD4 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C48E622A869E3A0012DAD4 /* ActivityView.swift */; };
+		21C48E652A86A0520012DAD4 /* ClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C48E642A86A0520012DAD4 /* ClientView.swift */; };
 		21C641C32A84CAA800BF8A95 /* UpworkExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C641C22A84CAA800BF8A95 /* UpworkExplorerApp.swift */; };
 		21C641C52A84CAA800BF8A95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C641C42A84CAA800BF8A95 /* ContentView.swift */; };
 		21C641C72A84CAAA00BF8A95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C641C62A84CAAA00BF8A95 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21C48E622A869E3A0012DAD4 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		21C48E642A86A0520012DAD4 /* ClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientView.swift; sourceTree = "<group>"; };
 		21C641BF2A84CAA800BF8A95 /* UpworkExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpworkExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C641C22A84CAA800BF8A95 /* UpworkExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpworkExplorerApp.swift; sourceTree = "<group>"; };
 		21C641C42A84CAA800BF8A95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				21C641E32A85112D00BF8A95 /* RotatingAnimation.swift */,
 				21C641E52A8521A900BF8A95 /* FilterRow.swift */,
 				21D4235A2A86145A0052EA2A /* HighlightText.swift */,
+				21C48E622A869E3A0012DAD4 /* ActivityView.swift */,
+				21C48E642A86A0520012DAD4 /* ClientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +193,8 @@
 				21C641C52A84CAA800BF8A95 /* ContentView.swift in Sources */,
 				21C641E22A850B5E00BF8A95 /* Settings.swift in Sources */,
 				21C641E42A85112D00BF8A95 /* RotatingAnimation.swift in Sources */,
+				21C48E652A86A0520012DAD4 /* ClientView.swift in Sources */,
+				21C48E632A869E3A0012DAD4 /* ActivityView.swift in Sources */,
 				21C641D62A84CE0500BF8A95 /* ModelData.swift in Sources */,
 				21D4235B2A86145A0052EA2A /* HighlightText.swift in Sources */,
 				21C641D82A84CF8500BF8A95 /* NetworkManager.swift in Sources */,

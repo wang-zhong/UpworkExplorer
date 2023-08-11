@@ -22,6 +22,22 @@ struct JobPost: Identifiable, Hashable, Codable {
     var badges: String
     var country: String
     var createdAt: String
+    var locationRestriction: String?
+    var proposals: String?
+    var interviewing: String?
+    var invitesSent: String?
+    var unanswered: String?
+    var clientLocation: String?
+    var jobPosted: String?
+    var hireRate: String?
+    var totalSpent: String?
+    var hires: String?
+    var clientHourlyRate: String?
+    var clientHours: String?
+    var clientCompanyIndustry: String?
+    var clientCompanySize: String?
+    var memberSince: String?
+
     
     var postedAt: String {
         let current = NSDate().timeIntervalSince1970
@@ -39,5 +55,9 @@ struct JobPost: Identifiable, Hashable, Codable {
         default:
             return "\(time) - \(Int(diff / 3600 / 24)) days ago"
         }
+    }
+    
+    var location: String {
+        locationRestriction ?? country
     }
 }
