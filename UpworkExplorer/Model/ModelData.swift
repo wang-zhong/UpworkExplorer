@@ -17,6 +17,7 @@ final class ModelData: ObservableObject {
         
         set(value) {
             settings.usOnly = value
+            settings.page = "1"
             jobPosts.removeAll()
             getData()
         }
@@ -29,6 +30,7 @@ final class ModelData: ObservableObject {
         
         set(value) {
             settings.searchTerm = value
+            settings.page = "1"
             jobPosts.removeAll()
             getData()
         }
@@ -41,6 +43,51 @@ final class ModelData: ObservableObject {
         
         set(value) {
             settings.preferNotification = value
+        }
+    }
+    
+    var total: String {
+        get {
+            return settings.total
+        }
+        
+        set(value) {
+            settings.total = value
+        }
+    }
+    
+    var totalPage: String {
+        String(Int(ceil(Double(settings.total)! / Double(settings.limit)!)))
+    }
+    
+    var page: String {
+        get {
+            return settings.page
+        }
+        
+        set(value) {
+            if Int(value)! > Int(totalPage)! {
+                settings.page = totalPage
+            } else if Int(value)! < 1 {
+                settings.page = "1"
+            } else {
+                settings.page = value
+            }
+            jobPosts.removeAll()
+            getData()
+        }
+    }
+    
+    var limit: String {
+        get {
+            return settings.limit
+        }
+        
+        set(value) {
+            settings.limit = value
+            settings.page = "1"
+            jobPosts.removeAll()
+            getData()
         }
     }
     
@@ -59,10 +106,11 @@ final class ModelData: ObservableObject {
         
         var queryItems = [URLQueryItem]()
         
-        queryItems.append(URLQueryItem(name: "limit", value: "40"))
-        
+        queryItems.append(URLQueryItem(name: "limit", value: String(limit)))
+        queryItems.append(URLQueryItem(name: "page", value: String(page)))
+
         if jobPosts.count > 0 {
-            queryItems.append(URLQueryItem(name: "createdAt", value: jobPosts.first!.createdAt))
+            queryItems.append(URLQueryItem(name: "relativeTime", value: jobPosts.first!.createdAt))
         }
         
         if settings.usOnly == true {
@@ -79,20 +127,24 @@ final class ModelData: ObservableObject {
             return
         }
         
-        NetworkManager.loadData(url: url) { jobs in
-            if let jobs = jobs, jobs.count > 0 {
-                if self.jobPosts.count > 0 && self.settings.preferNotification == true {
-                    NotificationManager.triggerNotification(newJobCount: jobs.count)
-                }
-                
-                for job in jobs {
-                    if !self.jobPosts.contains(where: { $0.id == job.id }) {
-                        self.jobPosts.append(job)
-                    }
-                }
-                
-                self.jobPosts.sort { $0.timestamp > $1.timestamp }
+        NetworkManager.loadData(url: url) { result in
+            guard let result = result else {
+                return
             }
+            
+            self.total = result.total
+            
+            if self.jobPosts.count == 0 {
+                self.jobPosts = result.jobs
+                return
+            }
+
+            let newJobs = result.jobs.filter { $0.timestamp > self.jobPosts.first!.timestamp }
+            if newJobs.count > 0 && self.settings.preferNotification == true {
+                NotificationManager.triggerNotification(newJobCount: newJobs.count)
+            }
+
+            self.jobPosts = result.jobs
         }
     }
 }

@@ -14,8 +14,14 @@ struct JobDetail: View {
     var body: some View {
         List {
             VStack(alignment: .leading) {
-                HighlightText(text: post.title, term: modelData.searchTerm)
-                    .font(.title)
+                HStack {
+                    HighlightText(text: post.title, term: modelData.searchTerm)
+                        .font(.title)
+                    if post.memberSince == "Private" {
+                        Image(systemName: "exclamationmark.lock")
+                        Text("Private")
+                    }
+                }
                 Text(post.href)
                     .foregroundColor(.blue)
                 Text(post.postedAt)
@@ -41,8 +47,10 @@ struct JobDetail: View {
                     .padding(.top)
                     .padding(.bottom)
 
-                ActivityView(post: post)
-                ClientView(post: post)
+                if post.memberSince != "Private" {
+                    ActivityView(post: post)
+                    ClientView(post: post)
+                }
             }
             .padding()
             .textSelection(.enabled)

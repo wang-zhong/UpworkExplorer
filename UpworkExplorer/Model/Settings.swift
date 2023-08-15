@@ -11,4 +11,7 @@ struct Settings {
     var usOnly = false
     var preferNotification = false
     var searchTerm = ""
+    var total = "0"
+    var page = "1"
+    var limit = "40"
 }

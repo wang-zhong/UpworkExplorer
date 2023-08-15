@@ -8,14 +8,14 @@
 import Foundation
 
 class NetworkManager {
-    static func loadData(url: URL, completion: @escaping ([JobPost]?) -> ()) {
+    static func loadData(url: URL, completion: @escaping (Result?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
                 completion(nil)
                 return
             }
             
-            if let response = try? JSONDecoder().decode([JobPost].self, from: data) {
+            if let response = try? JSONDecoder().decode(Result.self, from: data) {
                 DispatchQueue.main.async {
                     completion(response)
                 }

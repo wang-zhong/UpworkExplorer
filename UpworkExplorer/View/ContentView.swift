@@ -17,8 +17,14 @@ struct ContentView: View {
             
             if modelData.jobPosts.count > 0 {
                 List(modelData.jobPosts, selection: $selected) { post in
-                    HighlightText(text: post.title, term: modelData.searchTerm)
-                        .font(.title2)
+                    HStack {
+                        HighlightText(text: post.title, term: modelData.searchTerm)
+                            .font(.title2)
+                        Spacer()
+                        if post.memberSince == "Private" {
+                            Image(systemName: "exclamationmark.lock")
+                        }
+                    }
                 }
                 .navigationSplitViewColumnWidth(380)
             } else {
@@ -32,10 +38,8 @@ struct ContentView: View {
                 }
                 .navigationSplitViewColumnWidth(380)
             }
-            
-            Toggle("Prefer Notification", isOn: $modelData.preferNotification)
-                .toggleStyle(SwitchToggleStyle(tint: .green))
-                .padding()
+
+            BottomRow()
         } detail: {
             if selected == nil || modelData.jobPosts.first(where: { $0.id == selected}) == nil {
                 Text("Please select one of jobs")

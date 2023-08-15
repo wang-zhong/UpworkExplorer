@@ -12,17 +12,20 @@ struct FilterRow: View {
     @State private var searchTerm = ""
     
     var body: some View {
-        HStack {
-            TextField("Search...", text: $searchTerm)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .onSubmit {
-                    modelData.searchTerm = searchTerm
-                }
-            Toggle("US Only", isOn: $modelData.isUsOnly)
-                .toggleStyle(SwitchToggleStyle(tint: .green))
+        VStack {
+            HStack {
+                TextField("Search...", text: $searchTerm)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .onSubmit {
+                        modelData.searchTerm = searchTerm
+                    }
+                Toggle("US Only", isOn: $modelData.isUsOnly)
+                    .toggleStyle(SwitchToggleStyle(tint: .green))
+            }
+            .padding(.horizontal)
+            
+            Divider().padding(.horizontal)
         }
-        .padding()
-
     }
 }
 
