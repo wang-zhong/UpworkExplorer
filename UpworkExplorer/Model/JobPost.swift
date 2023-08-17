@@ -37,6 +37,9 @@ struct JobPost: Identifiable, Hashable, Codable {
     var clientCompanyIndustry: String?
     var clientCompanySize: String?
     var memberSince: String?
+    var isPrivate: String?
+    var clientFeedbackCount: String?
+    var clientFeedbackScore: String?
 
     
     var postedAt: String {

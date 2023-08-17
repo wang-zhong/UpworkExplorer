@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var modelData: ModelData
     @State var selected: Int?
+    @State var selectedJob: JobPost?
     
     var body: some View {
         NavigationSplitView {
@@ -21,12 +22,15 @@ struct ContentView: View {
                         HighlightText(text: post.title, term: modelData.searchTerm)
                             .font(.title2)
                         Spacer()
-                        if post.memberSince == "Private" {
+                        if post.isPrivate == "Private" {
                             Image(systemName: "exclamationmark.lock")
                         }
                     }
                 }
-                .navigationSplitViewColumnWidth(380)
+                .navigationSplitViewColumnWidth(min: 380, ideal: 400, max: 600)
+                .onChange(of: selected, perform: { newValue in
+                    selectedJob = modelData.jobPosts.first(where: { $0.id == newValue })!
+                })
             } else {
                 List {
                     HStack {
@@ -36,15 +40,15 @@ struct ContentView: View {
                     }
                     .padding(.top, 200)
                 }
-                .navigationSplitViewColumnWidth(380)
+                .navigationSplitViewColumnWidth(min: 380, ideal: 400, max: 600)
             }
 
             BottomRow()
         } detail: {
-            if selected == nil || modelData.jobPosts.first(where: { $0.id == selected}) == nil {
+            if selectedJob == nil {
                 Text("Please select one of jobs")
             } else {
-                JobDetail(post: modelData.jobPosts.first(where: { $0.id == selected })!)
+                JobDetail(post: selectedJob!)
             }
         }
     }
@@ -53,7 +57,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .frame(minWidth: 1024, minHeight: 860)
+            .frame(minWidth: 1200, minHeight: 860)
             .environmentObject(ModelData())
     }
 }

@@ -17,8 +17,8 @@ final class ModelData: ObservableObject {
         
         set(value) {
             settings.usOnly = value
-            settings.page = "1"
-            jobPosts.removeAll()
+            settings.page = 1
+            UserDefaults.standard.set(settings.usOnly, forKey: "usOnly")
             getData()
         }
     }
@@ -30,8 +30,8 @@ final class ModelData: ObservableObject {
         
         set(value) {
             settings.searchTerm = value
-            settings.page = "1"
-            jobPosts.removeAll()
+            settings.page = 1
+            UserDefaults.standard.set(settings.searchTerm, forKey: "searchTerm")
             getData()
         }
     }
@@ -43,10 +43,11 @@ final class ModelData: ObservableObject {
         
         set(value) {
             settings.preferNotification = value
+            UserDefaults.standard.set(settings.preferNotification, forKey: "notification")
         }
     }
     
-    var total: String {
+    var total: Int {
         get {
             return settings.total
         }
@@ -56,49 +57,48 @@ final class ModelData: ObservableObject {
         }
     }
     
-    var totalPage: String {
-        String(Int(ceil(Double(settings.total)! / Double(settings.limit)!)))
+    var totalPage: Int {
+        Int(ceil(Double(settings.total) / Double(settings.limit)))
     }
     
-    var page: String {
+    var page: Int {
         get {
             return settings.page
         }
         
         set(value) {
-            if Int(value)! > Int(totalPage)! {
+            if value > totalPage {
                 settings.page = totalPage
-            } else if Int(value)! < 1 {
-                settings.page = "1"
+            } else if value < 1 {
+                settings.page = 1
             } else {
                 settings.page = value
+                getData()
             }
-            jobPosts.removeAll()
-            getData()
         }
     }
     
-    var limit: String {
+    var limit: Int {
         get {
             return settings.limit
         }
         
         set(value) {
             settings.limit = value
-            settings.page = "1"
-            jobPosts.removeAll()
+            settings.page = 1
+            UserDefaults.standard.set(settings.limit, forKey: "limit")
             getData()
         }
     }
     
     init() {
         getData()
-        Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { timer in
-            self.getData()
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+            self.getData(true)
         }
     }
     
-    private func getData () {
+    private func getData (_ isUpdate: Bool = false) {
         var urlComponent = URLComponents()
         urlComponent.scheme = "http"
         urlComponent.host = "192.168.0.152"
@@ -132,16 +132,18 @@ final class ModelData: ObservableObject {
                 return
             }
             
-            self.total = result.total
+            self.total = Int(result.total)!
             
             if self.jobPosts.count == 0 {
                 self.jobPosts = result.jobs
                 return
             }
 
-            let newJobs = result.jobs.filter { $0.timestamp > self.jobPosts.first!.timestamp }
-            if newJobs.count > 0 && self.settings.preferNotification == true {
-                NotificationManager.triggerNotification(newJobCount: newJobs.count)
+            if isUpdate {
+                let newJobs = result.jobs.filter { $0.timestamp > self.jobPosts.first!.timestamp }
+                if newJobs.count > 0 && self.settings.preferNotification == true {
+                    NotificationManager.triggerNotification(newJobCount: newJobs.count)
+                }
             }
 
             self.jobPosts = result.jobs

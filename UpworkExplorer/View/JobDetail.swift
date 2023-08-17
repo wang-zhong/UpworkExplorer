@@ -17,7 +17,7 @@ struct JobDetail: View {
                 HStack {
                     HighlightText(text: post.title, term: modelData.searchTerm)
                         .font(.title)
-                    if post.memberSince == "Private" {
+                    if post.isPrivate == "Private" {
                         Image(systemName: "exclamationmark.lock")
                         Text("Private")
                     }
@@ -47,10 +47,8 @@ struct JobDetail: View {
                     .padding(.top)
                     .padding(.bottom)
 
-                if post.memberSince != "Private" {
-                    ActivityView(post: post)
-                    ClientView(post: post)
-                }
+                ActivityView(post: post)
+                ClientView(post: post)
             }
             .padding()
             .textSelection(.enabled)

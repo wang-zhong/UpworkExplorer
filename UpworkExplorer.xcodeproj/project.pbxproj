@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		214120552A8E339500D53342 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214120542A8E339500D53342 /* RatingView.swift */; };
 		21C48E632A869E3A0012DAD4 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C48E622A869E3A0012DAD4 /* ActivityView.swift */; };
 		21C48E652A86A0520012DAD4 /* ClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C48E642A86A0520012DAD4 /* ClientView.swift */; };
 		21C641C32A84CAA800BF8A95 /* UpworkExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C641C22A84CAA800BF8A95 /* UpworkExplorerApp.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		214120542A8E339500D53342 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		21C48E622A869E3A0012DAD4 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		21C48E642A86A0520012DAD4 /* ClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientView.swift; sourceTree = "<group>"; };
 		21C641BF2A84CAA800BF8A95 /* UpworkExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpworkExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 			children = (
 				21C641E32A85112D00BF8A95 /* RotatingAnimation.swift */,
 				21D4235A2A86145A0052EA2A /* HighlightText.swift */,
+				214120542A8E339500D53342 /* RatingView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				21C641D62A84CE0500BF8A95 /* ModelData.swift in Sources */,
 				21D4235B2A86145A0052EA2A /* HighlightText.swift in Sources */,
 				21FD22912A8B6D1500CEA1B9 /* BottomRow.swift in Sources */,
+				214120552A8E339500D53342 /* RatingView.swift in Sources */,
 				21C641D82A84CF8500BF8A95 /* NetworkManager.swift in Sources */,
 				21C641DE2A84EEAD00BF8A95 /* NotificationManager.swift in Sources */,
 				21C641D42A84CD2900BF8A95 /* JobPost.swift in Sources */,
@@ -342,6 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UpworkExplorer/UpworkExplorer.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -357,7 +362,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.creative.UpworkExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -371,6 +377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UpworkExplorer/UpworkExplorer.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -378,6 +385,7 @@
 				DEVELOPMENT_TEAM = 43228J28UR;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = UpworkExplorer;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -386,7 +394,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 0.1.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.creative.UpworkExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

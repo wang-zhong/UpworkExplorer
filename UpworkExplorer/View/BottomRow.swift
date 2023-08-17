@@ -15,10 +15,10 @@ struct BottomRow: View {
             Divider().padding(.horizontal)
             HStack {
                 Picker(selection: $modelData.limit, label: Text("Limit")) {
-                    Text("20").tag("20")
-                    Text("40").tag("40")
-                    Text("100").tag("100")
-                    Text("200").tag("200")
+                    Text("20").tag(20)
+                    Text("40").tag(40)
+                    Text("100").tag(100)
+                    Text("200").tag(200)
                 }
                 .frame(maxWidth: 100)
 
@@ -26,14 +26,14 @@ struct BottomRow: View {
                 
                 HStack {
                     Button {
-                        modelData.page = String(Int(modelData.page)! - 1)
+                        modelData.page = modelData.page - 1
                     } label: {
                         Label("Prev", systemImage: "chevron.left")
                             .labelStyle(.iconOnly)
                     }
                     Text("\(modelData.page) / \(modelData.totalPage)")
                     Button {
-                        modelData.page = String(Int(modelData.page)! + 1)
+                        modelData.page = modelData.page + 1
                     } label: {
                         Label("Prev", systemImage: "chevron.right")
                             .labelStyle(.iconOnly)

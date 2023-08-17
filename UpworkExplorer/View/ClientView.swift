@@ -17,14 +17,23 @@ struct ClientView: View {
             HStack {
                 Text("About the client")
                     .font(.title2)
-                    .padding(.top)
-                    .padding(.bottom)
                 if post.memberSince != nil {
                     Text(post.memberSince!)
                         .font(.footnote)
                         .foregroundColor(.gray)
                 }
             }
+            .padding(.top)
+            if post.clientFeedbackScore != nil && post.clientFeedbackCount != nil {
+                HStack {
+                    RatingView(score: Double(post.clientFeedbackScore!)!)
+                        .frame(width: 100, height: 13)
+                    Text("\(post.clientFeedbackScore!) based on \(post.clientFeedbackCount!) feedbacks")
+                }
+                .padding(.top, 2)
+                .padding(.bottom)
+            }
+
             HStack {
                 if post.clientLocation != nil {
                     VStack(alignment: .leading) {

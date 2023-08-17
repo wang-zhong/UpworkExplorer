@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FilterRow: View {
     @EnvironmentObject var modelData: ModelData
-    @State private var searchTerm = ""
+    @State private var searchTerm = UserDefaults.standard.string(forKey: "searchTerm") ?? ""
     
     var body: some View {
         VStack {
