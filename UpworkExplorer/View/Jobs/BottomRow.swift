@@ -39,12 +39,6 @@ struct BottomRow: View {
                             .labelStyle(.iconOnly)
                     }
                 }
-                
-                Spacer()
-                
-                Toggle("Notification", isOn: $modelData.preferNotification)
-                    .labelsHidden()
-                    .toggleStyle(SwitchToggleStyle(tint: .green))
             }
             .padding(.horizontal)
             .padding(.bottom, 6)
@@ -55,6 +49,6 @@ struct BottomRow: View {
 struct BottomRow_Previews: PreviewProvider {
     static var previews: some View {
         BottomRow()
-            .environmentObject(ModelData())
+            .environmentObject(ModelData.shared)
     }
 }

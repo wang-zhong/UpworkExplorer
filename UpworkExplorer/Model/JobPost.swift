@@ -63,4 +63,29 @@ struct JobPost: Identifiable, Hashable, Codable {
     var location: String {
         locationRestriction ?? country
     }
+    
+    var clientCity: String? {
+        guard clientLocation != nil else {
+            return nil
+        }
+        let locations = clientLocation!.split(separator: ", ")
+        
+        if locations.count > 1 {
+            return String(locations.first!)
+        }
+        return nil
+    }
+    
+    var clientCountry: String? {
+        guard clientLocation != nil else {
+            return nil
+        }
+        
+        let locations = clientLocation!.split(separator: ", ")
+        
+        if locations.count > 1 {
+            return String(locations.last!)
+        }
+        return clientLocation
+    }
 }

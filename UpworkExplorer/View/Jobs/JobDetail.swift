@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct JobDetail: View {
-    @EnvironmentObject var modelData: ModelData
     var post: JobPost
+    var searchText: String
     
     var body: some View {
         List {
             VStack(alignment: .leading) {
                 HStack {
-                    HighlightText(text: post.title, term: modelData.searchTerm)
+                    HighlightText(text: post.title, term: searchText)
                         .font(.title)
                     if post.isPrivate == "Private" {
                         Image(systemName: "exclamationmark.lock")
@@ -41,8 +41,8 @@ struct JobDetail: View {
                 }
                 .padding(.bottom, 4)
                 Text("Description: ").font(.title2)
-                HighlightText(text: post.description, term: modelData.searchTerm)
-                HighlightText(text: post.badges, term: modelData.searchTerm)
+                HighlightText(text: post.description, term: searchText)
+                HighlightText(text: post.badges, term: searchText)
                     .foregroundColor(.indigo)
                     .padding(.top)
                     .padding(.bottom)
@@ -57,13 +57,12 @@ struct JobDetail: View {
 }
 
 struct JobDetail_Previews: PreviewProvider {
-    static var modelData = ModelData()
+    static var modelData = ModelData.shared
     
     static var previews: some View {
         if modelData.jobPosts.count > 0 {
-            JobDetail(post: modelData.jobPosts.first!)
+            JobDetail(post: modelData.jobPosts.first!, searchText: modelData.searchText)
                 .frame(minWidth: 644, minHeight: 860)
-                .environmentObject(ModelData())
         } else {
             Text("Loading...")
         }

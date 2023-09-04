@@ -20,7 +20,7 @@ struct ActivityView: View {
                 .padding(.bottom)
             HStack {
                 if post.proposals != nil {
-                    VStack(alignment: .leading) {
+                    VStack {
                         Text(post.proposals!)
                         Text("Proposals").font(.footnote).foregroundColor(.gray)
                     }
@@ -53,7 +53,7 @@ struct ActivityView: View {
 }
 
 struct ActivityView_Previews: PreviewProvider {
-    static var modelData = ModelData()
+    static var modelData = ModelData.shared
     
     static var previews: some View {
         if modelData.jobPosts.count > 0 {

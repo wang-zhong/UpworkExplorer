@@ -9,47 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var modelData: ModelData
-    @State var selected: Int?
-    @State var selectedJob: JobPost?
-    
+
     var body: some View {
         NavigationSplitView {
-            FilterRow()
-            
-            if modelData.jobPosts.count > 0 {
-                List(modelData.jobPosts, selection: $selected) { post in
-                    HStack {
-                        HighlightText(text: post.title, term: modelData.searchTerm)
-                            .font(.title2)
-                        Spacer()
-                        if post.isPrivate == "Private" {
-                            Image(systemName: "exclamationmark.lock")
-                        }
-                    }
-                }
-                .navigationSplitViewColumnWidth(min: 380, ideal: 400, max: 600)
-                .onChange(of: selected, perform: { newValue in
-                    selectedJob = modelData.jobPosts.first(where: { $0.id == newValue })!
-                })
-            } else {
-                List {
-                    HStack {
-                        Spacer()
-                        RotatingAnimation()
-                        Spacer()
-                    }
-                    .padding(.top, 200)
-                }
-                .navigationSplitViewColumnWidth(min: 380, ideal: 400, max: 600)
-            }
-
-            BottomRow()
+            Sidebar(menuItems: modelData.sideMenuItems, selection: $modelData.activeFeedId)
+                .frame(minWidth: 250)
         } detail: {
-            if selectedJob == nil {
-                Text("Please select one of jobs")
-            } else {
-                JobDetail(post: selectedJob!)
+            switch modelData.activeFeedId {
+            case 2:
+                SettingsContentView()
+            case 1:
+                FeedView()
+            default:
+                JobsContentView()
             }
+        }
+        .onChange(of: modelData.activeFeedId) { newValue in
+            modelData.page = 1
         }
     }
 }
@@ -57,7 +33,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .frame(minWidth: 1200, minHeight: 860)
-            .environmentObject(ModelData())
+            .frame(minWidth: 1324, minHeight: 860)
+            .environmentObject(ModelData.shared)
     }
 }

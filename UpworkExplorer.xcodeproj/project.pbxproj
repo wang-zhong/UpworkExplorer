@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21085C222A93519C00796725 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21085C212A93519C00796725 /* FeedView.swift */; };
+		2121A30E2A8F4C770032C532 /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2121A30D2A8F4C770032C532 /* SettingsContentView.swift */; };
+		2121A3112A8F55330032C532 /* JobsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2121A3102A8F55330032C532 /* JobsContentView.swift */; };
+		2121A3142A8F56160032C532 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2121A3132A8F56160032C532 /* Sidebar.swift */; };
+		2121A3162A8F5EAF0032C532 /* SideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2121A3152A8F5EAF0032C532 /* SideMenuItem.swift */; };
+		2121A3192A8F68720032C532 /* ExpansionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2121A3182A8F68720032C532 /* ExpansionState.swift */; };
+		2121A31B2A8F75850032C532 /* GlobalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2121A31A2A8F75850032C532 /* GlobalSettings.swift */; };
+		2121A31D2A8F96AB0032C532 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2121A31C2A8F96AB0032C532 /* Feed.swift */; };
 		214120552A8E339500D53342 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214120542A8E339500D53342 /* RatingView.swift */; };
 		21C48E632A869E3A0012DAD4 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C48E622A869E3A0012DAD4 /* ActivityView.swift */; };
 		21C48E652A86A0520012DAD4 /* ClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C48E642A86A0520012DAD4 /* ClientView.swift */; };
@@ -19,15 +27,21 @@
 		21C641D82A84CF8500BF8A95 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C641D72A84CF8500BF8A95 /* NetworkManager.swift */; };
 		21C641DC2A84DC0800BF8A95 /* JobDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C641DB2A84DC0800BF8A95 /* JobDetail.swift */; };
 		21C641DE2A84EEAD00BF8A95 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C641DD2A84EEAD00BF8A95 /* NotificationManager.swift */; };
-		21C641E22A850B5E00BF8A95 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C641E12A850B5E00BF8A95 /* Settings.swift */; };
 		21C641E42A85112D00BF8A95 /* RotatingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C641E32A85112D00BF8A95 /* RotatingAnimation.swift */; };
-		21C641E62A8521A900BF8A95 /* FilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C641E52A8521A900BF8A95 /* FilterRow.swift */; };
 		21D4235B2A86145A0052EA2A /* HighlightText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4235A2A86145A0052EA2A /* HighlightText.swift */; };
 		21FD228D2A8B60B400CEA1B9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FD228C2A8B60B400CEA1B9 /* Result.swift */; };
 		21FD22912A8B6D1500CEA1B9 /* BottomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FD22902A8B6D1500CEA1B9 /* BottomRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21085C212A93519C00796725 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		2121A30D2A8F4C770032C532 /* SettingsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContentView.swift; sourceTree = "<group>"; };
+		2121A3102A8F55330032C532 /* JobsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsContentView.swift; sourceTree = "<group>"; };
+		2121A3132A8F56160032C532 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
+		2121A3152A8F5EAF0032C532 /* SideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItem.swift; sourceTree = "<group>"; };
+		2121A3182A8F68720032C532 /* ExpansionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionState.swift; sourceTree = "<group>"; };
+		2121A31A2A8F75850032C532 /* GlobalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSettings.swift; sourceTree = "<group>"; };
+		2121A31C2A8F96AB0032C532 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		214120542A8E339500D53342 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		21C48E622A869E3A0012DAD4 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		21C48E642A86A0520012DAD4 /* ClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientView.swift; sourceTree = "<group>"; };
@@ -42,9 +56,7 @@
 		21C641D72A84CF8500BF8A95 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		21C641DB2A84DC0800BF8A95 /* JobDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetail.swift; sourceTree = "<group>"; };
 		21C641DD2A84EEAD00BF8A95 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		21C641E12A850B5E00BF8A95 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		21C641E32A85112D00BF8A95 /* RotatingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingAnimation.swift; sourceTree = "<group>"; };
-		21C641E52A8521A900BF8A95 /* FilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRow.swift; sourceTree = "<group>"; };
 		21D4235A2A86145A0052EA2A /* HighlightText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightText.swift; sourceTree = "<group>"; };
 		21FD228C2A8B60B400CEA1B9 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		21FD22902A8B6D1500CEA1B9 /* BottomRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRow.swift; sourceTree = "<group>"; };
@@ -61,6 +73,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21085C202A93518C00796725 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				21085C212A93519C00796725 /* FeedView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		2121A30C2A8F4B480032C532 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2121A30D2A8F4C770032C532 /* SettingsContentView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2121A30F2A8F55220032C532 /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				2121A3102A8F55330032C532 /* JobsContentView.swift */,
+				21C641DB2A84DC0800BF8A95 /* JobDetail.swift */,
+				21C48E622A869E3A0012DAD4 /* ActivityView.swift */,
+				21C48E642A86A0520012DAD4 /* ClientView.swift */,
+				21FD22902A8B6D1500CEA1B9 /* BottomRow.swift */,
+			);
+			path = Jobs;
+			sourceTree = "<group>";
+		};
+		2121A3172A8F685C0032C532 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2121A3182A8F68720032C532 /* ExpansionState.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		21C641B62A84CAA800BF8A95 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +128,7 @@
 		21C641C12A84CAA800BF8A95 /* UpworkExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				2121A3172A8F685C0032C532 /* Support */,
 				21C641D22A84CD1700BF8A95 /* Model */,
 				21C641D12A84CCC600BF8A95 /* View */,
 				21C641C22A84CAA800BF8A95 /* UpworkExplorerApp.swift */,
@@ -103,13 +152,12 @@
 		21C641D12A84CCC600BF8A95 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				21085C202A93518C00796725 /* Feed */,
+				2121A30F2A8F55220032C532 /* Jobs */,
+				2121A30C2A8F4B480032C532 /* Settings */,
 				21FD228B2A8B606F00CEA1B9 /* Helpers */,
 				21C641C42A84CAA800BF8A95 /* ContentView.swift */,
-				21C641DB2A84DC0800BF8A95 /* JobDetail.swift */,
-				21C641E52A8521A900BF8A95 /* FilterRow.swift */,
-				21C48E622A869E3A0012DAD4 /* ActivityView.swift */,
-				21C48E642A86A0520012DAD4 /* ClientView.swift */,
-				21FD22902A8B6D1500CEA1B9 /* BottomRow.swift */,
+				2121A3132A8F56160032C532 /* Sidebar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,8 +167,10 @@
 			children = (
 				21C641D32A84CD2900BF8A95 /* JobPost.swift */,
 				21C641D52A84CE0500BF8A95 /* ModelData.swift */,
-				21C641E12A850B5E00BF8A95 /* Settings.swift */,
 				21FD228C2A8B60B400CEA1B9 /* Result.swift */,
+				2121A3152A8F5EAF0032C532 /* SideMenuItem.swift */,
+				2121A31A2A8F75850032C532 /* GlobalSettings.swift */,
+				2121A31C2A8F96AB0032C532 /* Feed.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,22 +255,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21C641E62A8521A900BF8A95 /* FilterRow.swift in Sources */,
 				21C641DC2A84DC0800BF8A95 /* JobDetail.swift in Sources */,
 				21C641C52A84CAA800BF8A95 /* ContentView.swift in Sources */,
-				21C641E22A850B5E00BF8A95 /* Settings.swift in Sources */,
 				21FD228D2A8B60B400CEA1B9 /* Result.swift in Sources */,
 				21C641E42A85112D00BF8A95 /* RotatingAnimation.swift in Sources */,
+				2121A3162A8F5EAF0032C532 /* SideMenuItem.swift in Sources */,
 				21C48E652A86A0520012DAD4 /* ClientView.swift in Sources */,
+				21085C222A93519C00796725 /* FeedView.swift in Sources */,
 				21C48E632A869E3A0012DAD4 /* ActivityView.swift in Sources */,
+				2121A31B2A8F75850032C532 /* GlobalSettings.swift in Sources */,
 				21C641D62A84CE0500BF8A95 /* ModelData.swift in Sources */,
 				21D4235B2A86145A0052EA2A /* HighlightText.swift in Sources */,
+				2121A3142A8F56160032C532 /* Sidebar.swift in Sources */,
+				2121A3112A8F55330032C532 /* JobsContentView.swift in Sources */,
 				21FD22912A8B6D1500CEA1B9 /* BottomRow.swift in Sources */,
 				214120552A8E339500D53342 /* RatingView.swift in Sources */,
 				21C641D82A84CF8500BF8A95 /* NetworkManager.swift in Sources */,
+				2121A30E2A8F4C770032C532 /* SettingsContentView.swift in Sources */,
 				21C641DE2A84EEAD00BF8A95 /* NotificationManager.swift in Sources */,
 				21C641D42A84CD2900BF8A95 /* JobPost.swift in Sources */,
+				2121A31D2A8F96AB0032C532 /* Feed.swift in Sources */,
 				21C641C32A84CAA800BF8A95 /* UpworkExplorerApp.swift in Sources */,
+				2121A3192A8F68720032C532 /* ExpansionState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

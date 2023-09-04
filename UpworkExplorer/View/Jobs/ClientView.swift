@@ -37,8 +37,10 @@ struct ClientView: View {
             HStack {
                 if post.clientLocation != nil {
                     VStack(alignment: .leading) {
-                        Text(post.clientLocation!)
-                        Text("Location").font(.footnote).foregroundColor(.gray)
+                        Text(post.clientCountry!)
+                        if post.clientCity != nil {
+                            Text(post.clientCity!).font(.footnote).foregroundColor(.gray)
+                        }
                     }
                     .padding(.trailing, 20)
                 }
@@ -80,7 +82,7 @@ struct ClientView: View {
 }
 
 struct ClientView_Previews: PreviewProvider {
-    static var modelData = ModelData()
+    static var modelData = ModelData.shared
     
     static var previews: some View {
         if modelData.jobPosts.count > 0 {
